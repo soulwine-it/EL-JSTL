@@ -2,8 +2,16 @@
     pageEncoding="UTF-8"
     isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<c:set> 채그 이용해 pageContext 내장 객체의 컨텍스트 이름을 변수 contextPath에 미리 설정 합니다.  --%>
-<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<c:set var="id" value="hong" scope="page" />
+<c:set var="pwd" value="1234" scope="page" />
+<c:set var="name" value="${'홍길동'}" scope="page" />
+<c:set var="age" value="${22}" scope="page" />
+<c:set var="height" value="${177}" scope="page" />
+<c:remove var="age" />
+<c:remove var="height" />
 
 <!DOCTYPE html>
 <html>
@@ -12,14 +20,21 @@
 <title>로그인 창</title>
 </head>
 <body>
-	<form action="result.jsp">
-		아이디 : <input type="text" size=20 /><br>
-		비밀번호 : <input type="password" size=20 /><br>
-		<input type="submit" value="로그인" /> <input type="reset" value="다시입력" />
-	</form>
-	<br><br>
-	<%--<a href="${pageContext.request.contextPath}/memberForm.jsp">회원가입하기</a> --%>
-	<%--긴 내장 객체의 속성을 사용할 필요 없이 간단한 변수 이름으로 컨텍스트 이름을 설정합니다. --%>
-	<a href='${contextPath}/test03/memberForm.jsp'>회원가입하기</a>
+	<table border="1" align="center">
+		<tr align="center" bgcolor="lightGreen" >
+			<td width="7%"> 아이디</td>
+			<td width="7%"> 비밀번호 </td>
+			<td width="7%"> 이름</td>
+			<td width="7%"> 나이 </td>
+			<td width= "7%">  키</td>
+		</tr>
+		<tr algin="center">
+			<td>${id}</td>
+			<td>${pwd}</td>
+			<td>${name}</td>
+			<td>${age}</td>
+			<td>${height}</td>
+		</tr>
+	</table>
 </body>
 </html>
