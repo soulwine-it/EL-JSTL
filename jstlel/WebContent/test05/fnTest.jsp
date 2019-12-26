@@ -28,7 +28,8 @@
 	
 	fn:substring(title1,3,6) = ${fn:substring(title1,3,6)}<br>
 	fn:trim(title1) =${fn:trim(title1)}<br>
-	fn:replace(title1, " ", " /")=${fn.replace(title1, " ","/") }<br>
+	fn:replace(title1," ", "/")=${fn:replace(title1," ","/") }<br>
+
 	
 	fn:indexOf(title2, str1)=${fn:indexOf(title2, str1)}<br>
 	fn:contains(title1, str1)=${fn:contains(title1, str1)}<br>
